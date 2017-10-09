@@ -1,0 +1,12 @@
+ftp:
+  image: mcreations/ftp
+  ports:
+    - "21:21"
+    - "20:20"
+    - "65000-65010:65000-65010"
+  environment:
+    - FTP_USER=cubenix
+    - FTP_PASS=temppass
+    - HOST=localhost
+    - PASV_MIN_PORT=65000
+    - PASV_MAX_PORT=65010
