@@ -1,0 +1,9 @@
+ftp:
+  image: mujz/lets-encrypt
+  ports:
+    - "80:80"
+    - "443:443"
+  environment:
+    - DOMAINS=dev.cubenix.com
+  volumes:
+    - ~/letsencrypt:/etc/letsencrypt
