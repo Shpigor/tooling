@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  private-jenkins:
+    image: "private-jenkins:latest"
+    container_name: "private-jenkins"
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      - JAVA_OPTS="-Dhudson.footerURL=http://build.site.com/"
+    volumes:
+      - "/mnt/volume_nyc1_01/docker/jenkins_home:/var/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock"
